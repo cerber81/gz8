@@ -16,5 +16,3 @@ def adding():
     with open('last_key.txt', "w", encoding='utf-8') as my_f:
         my_f.write(f"last_key = {new_key + 1}")
 
-
-adding()
