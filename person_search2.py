@@ -8,6 +8,3 @@ def person_search():
                 break
         else:
             print('data not found')
-
-
-
