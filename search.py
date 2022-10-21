@@ -1,5 +1,6 @@
-def person_search(data_file, name):
-    with open(data_file, 'r', encoding='utf_8') as data:
+def person_search():
+    name = input('Enter name: ')
+    with open('Hogwarts.csv', 'r', encoding='utf_8') as data:
         data_list = data.readlines()
         for i in range(1, len(data_list)):
             if name in data_list[i]:
@@ -9,4 +10,4 @@ def person_search(data_file, name):
             print('data not found')
 
 
-#person_search('Hogwarts.csv', 'Квирел')
+person_search()
