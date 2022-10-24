@@ -7,7 +7,7 @@ def read():
 
 def delete_data():
     with open('Hogwarts.csv','r',newline='\n',encoding='utf-8') as f:
-        n_id= input('Enter id of employee that you want to change :')
+        n_id= input('Enter id of employee that you want to delete :')
         found=0
         r=csv.reader(f,delimiter=";")
         nrec =[]
