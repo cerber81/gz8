@@ -15,4 +15,3 @@ def adding():
         base.write('{};{};{};{};{};{}\n'.format(new_key + 1, to_add[0], to_add[1], to_add[2], to_add[3], to_add[4]))
     with open('last_key.txt', "w", encoding='utf-8') as my_f:
         my_f.write(f"last_key = {new_key + 1}")
-
