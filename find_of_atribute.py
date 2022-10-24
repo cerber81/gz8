@@ -22,7 +22,7 @@ def print_position():
         for row in file_reader:
             if count == 0:
                 # Вывод строки, содержащей заголовки для столбцов
-                print('Должности в Hogwarts:')
+                print('Position in Hogwarts:')
             # Вывод строк
             buff_position_list.append(row['Position'])
             count += 1
@@ -30,8 +30,8 @@ def print_position():
         buff_position_list.sort()
         position_list = [k for k, g in groupby(buff_position_list)]
         print(position_list)
-        print(f'Всего сотрудников в Hogwarts {count + 1}.')
-        find_personal = str(input('Введите должность для поиска сотдрудников: '))
+        print(f'Total employees at Hogwarts {count + 1}.')
+        find_personal = str(input('Enter a position to search for employees: '))
         find_personal = find_personal.lower()
         print(find_personal)
     with open("Hogwarts.csv", encoding='utf-8') as r_file:
@@ -66,4 +66,4 @@ def print_position():
     #         if row['Position'] == find_personal:
     #             print(f'{count}, {row["Name"]}, {row["Position"]}, {row["Subject"]}, {row["Owl"]}, {row["Comments"]}')
 
-print_position()
+# print_position()

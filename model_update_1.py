@@ -53,6 +53,6 @@ def update():
                 w=csv.writer(f,delimiter=';')
                 w.writerows(nrec)
 
-read()
-update()
+# read()
+# update()
 
