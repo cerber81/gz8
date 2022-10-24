@@ -25,5 +25,5 @@ def delete_data():
             with open('Hogwarts.csv','w',newline='',encoding='utf-8') as f:
                 w=csv.writer(f,delimiter=';')
                 w.writerows(nrec)
-read()
-delete_data()
+# read()
+# delete_data()

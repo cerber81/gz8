@@ -1,5 +1,11 @@
 import log
 from person_search2 import person_search
+from print_info import print_hogwarts
+from find_of_atribute import print_position
+from adding_info import adding
+from model_update_1 import read, update
+from model_delete import delete_data
+from exceptions import user_choice
 
 def input_menu_choice():
     log.start_app()
@@ -14,45 +20,38 @@ def input_menu_choice():
         print('3. Add new info')
         print('4. Change info')
         print('5. Delete info')
+        
         print('0. Exit')
         choice_menu = user_choice()
         if choice_menu == 1:
-
+            print_hogwarts()
         elif choice_menu == 2:
             print('1. Find by name')
             print('2. Find by position')
             print('0. Exit')
-            if choice_menu == 1:
+            choice1 = user_choice()
+            if choice1 == 1:
                 person_search()
-            elif choice_menu == 2:
-
-            elif choice_menu == 0:
-
+            elif choice1 == 2:
+                print_position()
+            elif choice1 == 0:
+                input_menu_choice()
             else:
                 print('Error')
                 input_menu_choice()
         elif choice_menu == 3:
-            to_add = adding()
-            log.add(to_add)
+            adding()
+            print('Data successfully added')
         elif choice_menu == 4:
-            return 4
+            read()
+            update()
         elif choice_menu == 5:
-            del_key = delete_contact()
-            log.del_item(del_key)
-        elif choice_menu == 6:
-            phonebook = get_data.data_entry()
-            writing_scv(phonebook)
-            writing_txt(phonebook)
-            new_key = max(phonebook)
-            with open('last_key.txt', "w", encoding='utf-8') as my_f:
-                my_f.write(f"last_key = {new_key}")
-            log.new_book()
-
-        elif choice_menu == 0:
-            log.end_app()
+            read()
+            delete_data()
+        elif choice_menu == 0:            
             return exit()
         else:
             return input_menu_choice()
 
 
-print(input_menu_choice())
+input_menu_choice()
