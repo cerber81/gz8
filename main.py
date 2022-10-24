@@ -1,39 +1,36 @@
-def input_contact_menu_choice():
+import log
+from person_search2 import person_search
+
+def input_menu_choice():
     log.start_app()
     while True:
         print()
         print('-----------------------')
-        print('Управление контактами')
+        print('What do you want to do?')
         print('-----------------------')
         print()
-        print('1. Показать все')
-        print('2. Поиск записей')
-        print('3. Добавить новую запись')
-        print('4. Изменить существующую запись')
-        print('5. Удалить запись')
-        print('6. Создать новую телефонную книгу')
-        print('0. Выход')
+        print('1. Show all')
+        print('2. Find info')
+        print('3. Add new info')
+        print('4. Change info')
+        print('5. Delete info')
+        print('0. Exit')
         choice_menu = user_choice()
         if choice_menu == 1:
-            print('1. вывод данных из файла Phonebook.csv в консоль')
-            print('2. вывод данных из файла Phonebook.txt в консоль')
-            print('3. запись данных из всех файлов в файл Phonebook_all.csv')
-            print('0. Вернуться в главное меню')
-            choice1 = user_choice()
-            if choice1 == 1:
-                print_csv()
-                log.show_all()
-            if choice1 == 2:
-                print_txt()
-                log.show_all()
-            if choice1 == 3:
-                print_all()
-                log.show_all()
-            else:
-                return input_contact_menu_choice()
+
         elif choice_menu == 2:
-            search_object = look()
-            log.search(search_object)
+            print('1. Find by name')
+            print('2. Find by position')
+            print('0. Exit')
+            if choice_menu == 1:
+                person_search()
+            elif choice_menu == 2:
+
+            elif choice_menu == 0:
+
+            else:
+                print('Error')
+                input_menu_choice()
         elif choice_menu == 3:
             to_add = adding()
             log.add(to_add)
@@ -55,7 +52,7 @@ def input_contact_menu_choice():
             log.end_app()
             return exit()
         else:
-            return input_contact_menu_choice()
+            return input_menu_choice()
 
 
-print(input_contact_menu_choice())
+print(input_menu_choice())
