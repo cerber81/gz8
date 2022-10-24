@@ -9,6 +9,8 @@
 # print_csv()
 import csv
 from itertools import groupby
+from log import search
+from exceptions import data_search
 
 
 def print_position():
@@ -31,7 +33,7 @@ def print_position():
         position_list = [k for k, g in groupby(buff_position_list)]
         print(position_list)
         print(f'Total employees at Hogwarts {count + 1}.')
-        find_personal = str(input('Enter a position to search for employees: '))
+        find_personal = data_search()
         find_personal = find_personal.lower()
         print(find_personal)
     with open("Hogwarts.csv", encoding='utf-8') as r_file:
